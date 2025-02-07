@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public enum InteractionType {
+    Quest,
+    Shop,
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[CreateAssetMenu(menuName = "NPC Dialogue")]
+public class NPCDialogue : ScriptableObject
+{
+    [Header("Info")]
+    public string Name;
+    public Sprite Icon;
+
+    [Header("Interaction")]
+    public bool HasInteraction;
+    public InteractionType InteractionType;
+
+    [Header("Dialogue")]
+    public string Greeting;
+    [TextArea] public string[] Dialogue;
 }

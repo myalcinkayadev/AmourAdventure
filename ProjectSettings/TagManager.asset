@@ -47,11 +47,11 @@ TagManager:
   - name: Prop
     uniqueID: 3515356155
     locked: 0
-  - name: UI
-    uniqueID: 1751663093
-    locked: 0
   - name: Player
     uniqueID: 659888995
+    locked: 0
+  - name: UI
+    uniqueID: 1751663093
     locked: 0
   m_RenderingLayers:
   - Default
