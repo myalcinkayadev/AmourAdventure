@@ -18,7 +18,7 @@ public class NPCInteraction : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             DialogueManager.Instance.NPCSelected = null;
-            DialogueManager.Instance.CloseDialoguePanel();
+            DialogueManager.Instance.EndDialogue();
             interactionBox.SetActive(false);
         }
     }

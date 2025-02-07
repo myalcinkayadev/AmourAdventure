@@ -50211,6 +50211,7 @@ MonoBehaviour:
   npcIcon: {fileID: 2031564852}
   npcNameTMP: {fileID: 547042314}
   npcDialogueTMP: {fileID: 1921899603}
+  typingSpeed: 0.03
 --- !u!1001 &1681544508
 PrefabInstance:
   m_ObjectHideFlags: 0
