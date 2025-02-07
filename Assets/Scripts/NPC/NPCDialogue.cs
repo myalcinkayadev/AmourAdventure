@@ -16,6 +16,10 @@ public class NPCDialogue : ScriptableObject
     public bool HasInteraction;
     public InteractionType InteractionType;
 
+    [Header("LLM")]
+    public bool IsLLM = false;
+    public string ApiUrl;
+
     [Header("Dialogue")]
     public string Greeting;
     [TextArea] public string[] Dialogue;

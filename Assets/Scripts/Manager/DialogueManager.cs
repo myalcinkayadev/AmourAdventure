@@ -2,7 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class DialogueResponse
+{
+    public string[] dialogue;
+}
 
 public class DialogueManager : Singleton<DialogueManager>
 {
@@ -51,12 +58,55 @@ public class DialogueManager : Singleton<DialogueManager>
         npcNameTMP.text = NPCSelected.DialogueToShow.Name;
 
         dialogueQueue.Clear();
+
+        if (!NPCSelected.DialogueToShow.IsLLM) {
+            LoadDialogueFromNPC();
+        }
+        else {
+            LoadDialogueFromLLM(NPCSelected.DialogueToShow.ApiUrl);
+        }
+    }
+
+    private void LoadDialogueFromNPC()
+    {
         foreach (string sentence in NPCSelected.DialogueToShow.Dialogue)
         {
             dialogueQueue.Enqueue(sentence);
         }
-
         DisplayNextSentence();
+    }
+
+    private void LoadDialogueFromLLM(string url)
+    {
+        IEnumerator LLMCoroutine()
+        {
+            using (UnityWebRequest request = UnityWebRequest.Get(url))
+            {
+                yield return request.SendWebRequest();
+
+                DialogueResponse response = null;
+                if (request.result == UnityWebRequest.Result.Success)
+                {
+                    response = JsonUtility.FromJson<DialogueResponse>(request.downloadHandler.text);
+                }
+
+                if (request.result != UnityWebRequest.Result.Success || response?.dialogue == null)
+                {
+                    Debug.LogError("API Error or invalid response: " + request.error);
+                    dialogueQueue.Enqueue("<Thinking>");
+                }
+                else
+                {
+                    foreach (string sentence in response.dialogue)
+                    {
+                        dialogueQueue.Enqueue(sentence);
+                    }
+                }
+            }
+            DisplayNextSentence();
+        }
+
+        StartCoroutine(LLMCoroutine());
     }
 
     private void ContinueDialogue()
