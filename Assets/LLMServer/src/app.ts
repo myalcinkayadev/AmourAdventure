@@ -1,28 +1,34 @@
-import { PromptTemplate } from "@langchain/core/prompts";
-import { RunnableMap } from "@langchain/core/runnables";
-import { Ollama } from "@langchain/ollama";
+import express, { Request, Response } from 'express';
+import { SystemMessage, HumanMessage } from '@langchain/core/messages';
+import { Ollama } from '@langchain/ollama';
 
-async function main() {
-  const model = new Ollama({
-    model: "llama3.2:latest",
-    temperature: 0,
-    maxRetries: 2,
-  });
+const app = express();
+const port: number = parseInt(process.env.PORT ?? '3000', 10);
 
-  const jokeChain = PromptTemplate.fromTemplate(
-    "Tell me a joke about {topic}"
-  ).pipe(model);
-  const poemChain = PromptTemplate.fromTemplate(
-    "write a 2-line poem about {topic}"
-  ).pipe(model);
+app.get('/', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const model = new Ollama({ model: 'llama3.2:latest' });
+    const messages = [
+      new SystemMessage(
+        'A mad scientist RPG character who is obsessed with chaotic experiments, unpredictable inventions, and reckless discovery. Their speech is fast, energetic, and full of exclamations. They use short, frantic sentences, often jumping from one idea to the next. They are highly intelligent but completely unhinged. Their dialogue includes phrases like ‘Eureka!’, ‘What could go wrong?’, and ‘I need more test subjects!’ Their tone is always dramatic, excitable, and slightly unhinged.'
+      ),
+      new HumanMessage('Hi, how are you?'),
+    ];
 
-  const mapChain = RunnableMap.from({
-    joke: jokeChain,
-    poem: poemChain,
-  });
+    // TODO: Return response as stream
+    const dialogue: string[] = [];
+    const modelResponse = await model.invoke(messages);
+    dialogue.push(modelResponse);
 
-  const result = await mapChain.invoke({ topic: "bear" });
-  console.log(JSON.stringify(result, null, 2))
-}
+    res.json({ dialogue });
+  } catch (error: unknown) {
+    console.error('Error:', error);
+    const errorMessage =
+      error instanceof Error ? error.message : 'Unknown error';
+    res.status(500).json({ error: errorMessage });
+  }
+});
 
-main()
+app.listen(port, () => {
+  console.log(`Express server listening on port ${port}`);
+});
