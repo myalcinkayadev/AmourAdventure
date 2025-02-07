@@ -18,11 +18,10 @@ public class DialogueManager : Singleton<DialogueManager>
     public NPCInteraction NPCSelected { get; set; }
 
     private PlayerAction actions;
-    private bool dialogueStarted;
-    private bool isTyping;
     private readonly Queue<string> dialogueQueue = new Queue<string>();
     private Coroutine typingCoroutine;
-    private string currentSentence; 
+    private bool isTyping;
+    private string currentSentence;
 
     protected override void Awake() {
         base.Awake();
@@ -32,75 +31,46 @@ public class DialogueManager : Singleton<DialogueManager>
     public void EndDialogue()
     {
         dialoguePanel.SetActive(false);
-        dialogueStarted = false;
-        isTyping = false;
         dialogueQueue.Clear();
+        isTyping = false;
     }
 
-    private void Start() {
+    private void Start()
+    {
         actions.Dialogue.Interact.performed += ctx => StartDialogue();
         actions.Dialogue.Continue.performed += ctx => ContinueDialogue();
     }
 
     private void StartDialogue()
     {
-        if (NPCSelected == null || dialogueStarted)
+        if (NPCSelected == null || dialoguePanel.activeSelf)
             return;
 
-        dialogueStarted = true;
-        LoadDialogueFromNPC();
-        OpenDialoguePanel();
-        DisplayNextSentence();
-    }
+        dialoguePanel.SetActive(true);
+        npcIcon.sprite = NPCSelected.DialogueToShow.Icon;
+        npcNameTMP.text = NPCSelected.DialogueToShow.Name;
 
-    private void LoadDialogueFromNPC() {
         dialogueQueue.Clear();
-
-        if (NPCSelected.DialogueToShow.Dialogue == null || NPCSelected.DialogueToShow.Dialogue.Length == 0)
-            return;
-
         foreach (string sentence in NPCSelected.DialogueToShow.Dialogue)
         {
             dialogueQueue.Enqueue(sentence);
         }
-    }
 
-    private void OpenDialoguePanel()
-    {
-        dialoguePanel.SetActive(true);
-        npcIcon.sprite = NPCSelected.DialogueToShow.Icon;
-        npcNameTMP.text = NPCSelected.DialogueToShow.Name;
+        DisplayNextSentence();
     }
 
     private void ContinueDialogue()
     {
-        if (!dialogueStarted)
-            return;
-
-        if (isTyping)
-        {
-            CompleteCurrentSentence();
-        }
-        else if (dialogueQueue.Count > 0)
-        {
-            DisplayNextSentence();
-        }
-        else
-        {
-            EndDialogue();
-        }
+        if (isTyping) SkipTyping();
+        else DisplayNextSentence();
     }
 
-    private void CompleteCurrentSentence()
+    private void SkipTyping()
     {
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine);
-        }
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         npcDialogueTMP.text = currentSentence;
         isTyping = false;
     }
-
 
     private void DisplayNextSentence()
     {
@@ -111,25 +81,24 @@ public class DialogueManager : Singleton<DialogueManager>
         }
 
         currentSentence = dialogueQueue.Dequeue();
+        RestartTypingCoroutine(currentSentence);
+    }
 
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine);
-        }
-        typingCoroutine = StartCoroutine(TypeSentence(currentSentence));
+    private void RestartTypingCoroutine(string sentence)
+    {
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+        typingCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
     private IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
         npcDialogueTMP.text = "";
-
         foreach (char letter in sentence)
         {
             npcDialogueTMP.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-
         isTyping = false;
     }
 
