@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,7 +15,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private bool dialogueStarted;
     private PlayerAction actions;
-    private Queue<String> dialogueQueue = new Queue<string>();
+    private Queue<string> dialogueQueue = new Queue<string>();
 
     protected override void Awake() {
         base.Awake();
@@ -49,7 +48,7 @@ public class DialogueManager : Singleton<DialogueManager>
     }
 
     private void ContinueDialogue() {
-        if (NPCSelected == null || dialogueQueue.Count == 0)
+        if (NPCSelected == null || dialogueQueue.Count <= 0)
         {
             CloseDialoguePanel();
             return;
