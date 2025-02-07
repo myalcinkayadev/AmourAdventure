@@ -1,0 +1,47 @@
+{
+  "name": "llm-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "start:prod": "node dist/app.js",
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write '{src,test}/**/*.ts'",
+    "format:check": "prettier -c '{src,test}/**/*.ts'",
+    "lint:tsc": "tsc --noEmit",
+    "lint:eslint": "eslint '{src,test}/**/*.ts'",
+    "lint": "yarn lint:tsc && yarn lint:eslint",
+    "test:unit": "jest --config jest.config.unit.js --passWithNoTests",
+    "test:unit:coverage": "jest --config jest.config.unit.js --passWithNoTests --coverage",
+    "test:unit:watch": "jest --config jest.config.unit.js --watch"
+  },
+  "author": "myalcinkayadev",
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/core": "^1.10.11",
+    "@swc/helpers": "^0.5.15",
+    "@swc/jest": "^0.2.37",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.10",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.27",
+    "@langchain/core": "0.3.36",
+    "@langchain/langgraph": "^0.2.41",
+    "@langchain/ollama": "^0.1.5",
+    "@langchain/openai": "^0.4.2",
+    "@langchain/textsplitters": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "langchain": "^0.3.13"
+  },
+  "resolutions": {
+    "@langchain/core": "0.3.0"
+  }
+}
