@@ -7,16 +7,16 @@ public class DecisionDetectPlayer : FSMDecision
     [SerializeField] private float range = 4f;
     [SerializeField] private LayerMask playerMask;
 
-    private EnemyBrain enemy;
+    private CharacterBrain enemy;
 
     public override bool Decide() => DetectPlayer();
 
     private void Awake() {
-        enemy = GetComponent<EnemyBrain>();
+        enemy = GetComponent<CharacterBrain>();
 
         if (enemy == null)
         {
-            Debug.LogError($"DecisionDetectPlayer: No EnemyBrain found on {gameObject.name}");
+            Debug.LogError($"DecisionDetectPlayer: No CharacterBrain found on {gameObject.name}");
             enabled = false;
         }
     }

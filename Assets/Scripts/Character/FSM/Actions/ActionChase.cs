@@ -7,7 +7,7 @@ public class ActionChase : FSMAction
 
     private const float ChaseRange = 1.69f;
 
-    private EnemyBrain enemyBrain;
+    private CharacterBrain characterBrain;
 
     public override void Act()
     {
@@ -15,19 +15,19 @@ public class ActionChase : FSMAction
     }
 
     private void Awake() {
-        enemyBrain = GetComponent<EnemyBrain>();
+        characterBrain = GetComponent<CharacterBrain>();
 
-        if (enemyBrain == null)
+        if (characterBrain == null)
         {
-            Debug.LogError($"ActionChase: No EnemyBrain found on {gameObject.name}");
+            Debug.LogError($"ActionChase: No CharacterBrain found on {gameObject.name}");
             enabled = false;
         }
     }
     
     private void ChasePlayer() {
-        if (enemyBrain.Player == null) return;
+        if (characterBrain.Player == null) return;
         
-        Vector3 directionToPlayer = enemyBrain.Player.position - transform.position;
+        Vector3 directionToPlayer = characterBrain.Player.position - transform.position;
         if (directionToPlayer.magnitude >= ChaseRange) {
             transform.Translate(directionToPlayer.normalized * (chaseSpeed * Time.deltaTime));
         }

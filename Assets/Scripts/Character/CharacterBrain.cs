@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyBrain : MonoBehaviour {
+public class CharacterBrain : MonoBehaviour {
 
     [SerializeField] private string initState;
     [SerializeField] private FSMState[] states;
