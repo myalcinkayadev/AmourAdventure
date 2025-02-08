@@ -37462,6 +37462,7 @@ GameObject:
   - component: {fileID: 285542365}
   - component: {fileID: 285542364}
   - component: {fileID: 285542363}
+  - component: {fileID: 285542368}
   m_Layer: 6
   m_Name: Enemy_Cyclope
   m_TagString: Enemy
@@ -37617,13 +37618,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285542362}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.19, y: 15.14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.22598, y: 2.7599669, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285542368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285542362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1001 &287158774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40128,6 +40143,7 @@ GameObject:
   - component: {fileID: 487104222}
   - component: {fileID: 487104221}
   - component: {fileID: 487104220}
+  - component: {fileID: 487104225}
   m_Layer: 6
   m_Name: Enemy_Flam
   m_TagString: Enemy
@@ -40283,13 +40299,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487104219}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.67, y: 15.14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.985981, y: -3.860033, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487104225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487104219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!4 &494676732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3934863386394176383, guid: 1184375966a51e44fadb839cc7bbf600, type: 3}
@@ -43113,6 +43143,7 @@ GameObject:
   - component: {fileID: 956873094}
   - component: {fileID: 956873093}
   - component: {fileID: 956873092}
+  - component: {fileID: 956873097}
   m_Layer: 6
   m_Name: Enemy_Reptile
   m_TagString: Enemy
@@ -43268,13 +43299,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956873091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.8, y: 16.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.27, y: -2.16, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956873097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956873091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!4 &961312356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1894883979339893353, guid: 49267a5621c1e7e46948dd8bbbe6f187, type: 3}
@@ -47414,6 +47459,7 @@ GameObject:
   - component: {fileID: 1011313134}
   - component: {fileID: 1011313133}
   - component: {fileID: 1011313135}
+  - component: {fileID: 1011313136}
   m_Layer: 6
   m_Name: Enemy_Bamboo
   m_TagString: Enemy
@@ -47484,12 +47530,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011313130}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.01, y: 16.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.51, y: -1.04, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1011313133
 Rigidbody2D:
@@ -47576,6 +47622,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1011313136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011313130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: WanderState
+  states:
+  - ID: WanderState
+    Actions: []
+    Transitions: []
 --- !u!1001 &1017944335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48169,6 +48232,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1080723079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080723080}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080723080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080723079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -44.80598, y: 14.330033, z: -11.750139}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1011313132}
+  - {fileID: 1561882486}
+  - {fileID: 1806444932}
+  - {fileID: 2055074316}
+  - {fileID: 487104224}
+  - {fileID: 1821557067}
+  - {fileID: 285542367}
+  - {fileID: 956873096}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1102949185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5157124554651342178, guid: 82d56c6fb3a661a4b8e3265ecc794728, type: 3}
@@ -51007,6 +51109,7 @@ GameObject:
   - component: {fileID: 1561882484}
   - component: {fileID: 1561882483}
   - component: {fileID: 1561882482}
+  - component: {fileID: 1561882487}
   m_Layer: 6
   m_Name: Enemy_Beast
   m_TagString: Enemy
@@ -51162,13 +51265,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561882481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.52, y: 16.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.79, y: 1.01, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1561882487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561882481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1001 &1568504710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52557,6 +52674,7 @@ GameObject:
   - component: {fileID: 1806444930}
   - component: {fileID: 1806444929}
   - component: {fileID: 1806444928}
+  - component: {fileID: 1806444933}
   m_Layer: 6
   m_Name: Enemy_Mushroom
   m_TagString: Enemy
@@ -52712,13 +52830,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806444927}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.93, y: 16.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.34, y: -7.04, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806444933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806444927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1 &1821557062
 GameObject:
   m_ObjectHideFlags: 0
@@ -52732,6 +52864,7 @@ GameObject:
   - component: {fileID: 1821557065}
   - component: {fileID: 1821557064}
   - component: {fileID: 1821557063}
+  - component: {fileID: 1821557068}
   m_Layer: 6
   m_Name: Enemy_Slime
   m_TagString: Enemy
@@ -52887,13 +53020,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821557062}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.63, y: 15.14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.04598, y: -1.0800333, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821557068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821557062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1001 &1822458425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54438,6 +54585,7 @@ GameObject:
   - component: {fileID: 2055074314}
   - component: {fileID: 2055074313}
   - component: {fileID: 2055074312}
+  - component: {fileID: 2055074317}
   m_Layer: 6
   m_Name: Enemy_Snake
   m_TagString: Enemy
@@ -54574,7 +54722,7 @@ SpriteRenderer:
   m_SortingLayerID: 1914446479
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 767622986, guid: 055a54e39af23244aae524fab5be52b6, type: 3}
+  m_Sprite: {fileID: 94387394, guid: 11dd29d98f6d39840a507e6d9ec6cc0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -54593,13 +54741,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055074311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.88, y: 15.14, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.76598, y: 0.77996635, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1080723080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055074317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055074311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1001 &2061362191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54956,11 +55118,4 @@ SceneRoots:
   - {fileID: 802510901}
   - {fileID: 216804193}
   - {fileID: 48198383}
-  - {fileID: 1011313132}
-  - {fileID: 1561882486}
-  - {fileID: 1806444932}
-  - {fileID: 2055074316}
-  - {fileID: 487104224}
-  - {fileID: 1821557067}
-  - {fileID: 285542367}
-  - {fileID: 956873096}
+  - {fileID: 1080723080}
