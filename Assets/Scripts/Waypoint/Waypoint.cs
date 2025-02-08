@@ -18,6 +18,12 @@ public class Waypoint : MonoBehaviour
 
     public Vector3 GetPosition(int pointIndex)
     {
+        if (points == null || points.Length == 0)
+        {
+            Debug.LogWarning($"Waypoint '{name}' has no points assigned.");
+            return EntityPosition;
+        }
+        
         return EntityPosition + points[pointIndex];
     }
     
