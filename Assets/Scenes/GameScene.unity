@@ -37620,7 +37620,7 @@ Transform:
   m_GameObject: {fileID: 285542362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.22598, y: 2.7599669, z: 11.750139}
+  m_LocalPosition: {x: 17.97, y: 5.35, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40163,6 +40163,7 @@ GameObject:
   - component: {fileID: 487104222}
   - component: {fileID: 487104221}
   - component: {fileID: 487104220}
+  - component: {fileID: 487104227}
   - component: {fileID: 487104225}
   - component: {fileID: 487104226}
   m_Layer: 6
@@ -40321,7 +40322,7 @@ Transform:
   m_GameObject: {fileID: 487104219}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.985981, y: -3.860033, z: 11.750139}
+  m_LocalPosition: {x: 26.38, y: -3.49, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40339,9 +40340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: Wander
+  initState: Patrol
   states:
-  - ID: Wander
+  - ID: Patrol
     Actions:
     - {fileID: 487104226}
     Transitions: []
@@ -40354,12 +40355,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 487104219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a30f78d525c476f9602168ef7aacc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eb88e251a754223827219b20611d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  wanderTime: 1
-  moveRange: {x: 2, y: 2}
+--- !u!114 &487104227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487104219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a53faab3f3f7c47b5f809398d5486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: -1, y: 0, z: 0}
+  - {x: -10, y: 0, z: 0}
+  - {x: -10, y: -4, z: 0}
+  - {x: -1, y: -4, z: 0}
 --- !u!4 &494676732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3934863386394176383, guid: 1184375966a51e44fadb839cc7bbf600, type: 3}
@@ -43183,6 +43199,7 @@ GameObject:
   - component: {fileID: 956873094}
   - component: {fileID: 956873093}
   - component: {fileID: 956873092}
+  - component: {fileID: 956873099}
   - component: {fileID: 956873097}
   - component: {fileID: 956873098}
   m_Layer: 6
@@ -43341,7 +43358,7 @@ Transform:
   m_GameObject: {fileID: 956873091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.27, y: -2.16, z: 11.750139}
+  m_LocalPosition: {x: 2.05, y: -6.51, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43359,9 +43376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: Wander
+  initState: Patrol
   states:
-  - ID: Wander
+  - ID: Patrol
     Actions:
     - {fileID: 956873098}
     Transitions: []
@@ -43374,12 +43391,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 956873091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a30f78d525c476f9602168ef7aacc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eb88e251a754223827219b20611d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  wanderTime: 1
-  moveRange: {x: 2, y: 2}
+--- !u!114 &956873099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956873091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a53faab3f3f7c47b5f809398d5486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 1, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: -5, z: 0}
+  - {x: 1, y: -5, z: 0}
 --- !u!4 &961312356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1894883979339893353, guid: 49267a5621c1e7e46948dd8bbbe6f187, type: 3}
@@ -47592,7 +47624,7 @@ Transform:
   m_GameObject: {fileID: 1011313130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.51, y: -1.7, z: 11.750139}
+  m_LocalPosition: {x: -9.19, y: -2.21, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51186,8 +51218,9 @@ GameObject:
   - component: {fileID: 1561882484}
   - component: {fileID: 1561882483}
   - component: {fileID: 1561882482}
+  - component: {fileID: 1561882490}
   - component: {fileID: 1561882487}
-  - component: {fileID: 1561882488}
+  - component: {fileID: 1561882489}
   m_Layer: 6
   m_Name: Enemy_Beast
   m_TagString: Enemy
@@ -51344,7 +51377,7 @@ Transform:
   m_GameObject: {fileID: 1561882481}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.79, y: 1.01, z: 11.750139}
+  m_LocalPosition: {x: -4.35, y: 1.52, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51362,13 +51395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: Wander
+  initState: Patrol
   states:
-  - ID: Wander
+  - ID: Patrol
     Actions:
-    - {fileID: 1561882488}
+    - {fileID: 1561882489}
     Transitions: []
---- !u!114 &1561882488
+--- !u!114 &1561882489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51377,12 +51410,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561882481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a30f78d525c476f9602168ef7aacc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eb88e251a754223827219b20611d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  wanderTime: 1
-  moveRange: {x: 2, y: 2}
+--- !u!114 &1561882490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561882481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a53faab3f3f7c47b5f809398d5486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 1, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  - {x: 8, y: -4, z: 0}
+  - {x: 1, y: -4, z: 0}
 --- !u!1001 &1568504710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52929,7 +52977,7 @@ Transform:
   m_GameObject: {fileID: 1806444927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.34, y: -7.04, z: 11.750139}
+  m_LocalPosition: {x: -7.01, y: -10.08, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53139,7 +53187,7 @@ Transform:
   m_GameObject: {fileID: 1821557062}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.04598, y: -1.0800333, z: 11.750139}
+  m_LocalPosition: {x: 22.94, y: -0.97, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54722,6 +54770,7 @@ GameObject:
   - component: {fileID: 2055074314}
   - component: {fileID: 2055074313}
   - component: {fileID: 2055074312}
+  - component: {fileID: 2055074319}
   - component: {fileID: 2055074317}
   - component: {fileID: 2055074318}
   m_Layer: 6
@@ -54880,7 +54929,7 @@ Transform:
   m_GameObject: {fileID: 2055074311}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.76598, y: 0.77996635, z: 11.750139}
+  m_LocalPosition: {x: 27.63, y: 1.09, z: 11.750139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54898,9 +54947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e060b348f58a433c85c349d7591592a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: Wander
+  initState: Patrol
   states:
-  - ID: Wander
+  - ID: Patrol
     Actions:
     - {fileID: 2055074318}
     Transitions: []
@@ -54913,12 +54962,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2055074311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a30f78d525c476f9602168ef7aacc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eb88e251a754223827219b20611d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  wanderTime: 1
-  moveRange: {x: 2, y: 2}
+  speed: 2.5
+--- !u!114 &2055074319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055074311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a53faab3f3f7c47b5f809398d5486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: -1, y: 0, z: 0}
+  - {x: -5, y: 0, z: 0}
+  - {x: -5, y: 3, z: 0}
+  - {x: -11, y: 3, z: 0}
+  - {x: -11, y: -2, z: 0}
+  - {x: -1, y: -2, z: 0}
 --- !u!1001 &2061362191
 PrefabInstance:
   m_ObjectHideFlags: 0
