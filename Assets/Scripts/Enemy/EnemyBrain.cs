@@ -14,7 +14,6 @@ public class EnemyBrain : MonoBehaviour {
     public void ChangeState(string newStateID) {
         FSMState newState = GetState(newStateID);
         if (newState == null) {
-            Debug.LogError($"EnemyBrain: State '{newStateID}' not found for {gameObject.name}");
             return;
         }
 

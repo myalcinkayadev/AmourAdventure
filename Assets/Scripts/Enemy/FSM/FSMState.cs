@@ -13,7 +13,7 @@ public class FSMState {
     }
 
     private void ExecuteActions() {
-        if (Actions == null) return;
+        if (Actions == null || Actions.Length == 0) return;
 
         foreach (var action in Actions) {
             action.Act();
