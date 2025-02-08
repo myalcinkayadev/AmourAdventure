@@ -7,9 +7,9 @@ public class FSMState {
     public FSMAction[] Actions;
     public FSMTransition[] Transitions;
 
-    public void UpdateState(CharacterBrain characterBrain) {
+    public void UpdateState(AgentBrain agentBrain) {
         ExecuteActions();
-        ExecuteTransitions(characterBrain);
+        ExecuteTransitions(agentBrain);
     }
 
     private void ExecuteActions() {
@@ -20,13 +20,13 @@ public class FSMState {
         }
     }
 
-    private void ExecuteTransitions(CharacterBrain characterBrain) {
+    private void ExecuteTransitions(AgentBrain agentBrain) {
         if (Transitions == null) return;
 
         foreach (var transition in Transitions) {
             bool decisionResult = transition.Decision.Decide();
             string nextStateID = decisionResult ? transition.TrueState : transition.FalseState;
-            characterBrain.ChangeState(nextStateID);
+            agentBrain.ChangeState(nextStateID);
         }
     }
 }

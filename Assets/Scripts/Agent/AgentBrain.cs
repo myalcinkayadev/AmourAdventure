@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CharacterBrain : MonoBehaviour {
+public class AgentBrain : MonoBehaviour {
 
     [SerializeField] private string initState;
     [SerializeField] private FSMState[] states;

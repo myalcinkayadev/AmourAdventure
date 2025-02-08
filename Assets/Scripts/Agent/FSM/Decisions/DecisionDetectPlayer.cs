@@ -7,29 +7,29 @@ public class DecisionDetectPlayer : FSMDecision
     [SerializeField] private float range = 4f;
     [SerializeField] private LayerMask playerMask;
 
-    private CharacterBrain enemy;
+    private AgentBrain agent;
 
     public override bool Decide() => DetectPlayer();
 
     private void Awake() {
-        enemy = GetComponent<CharacterBrain>();
+        agent = GetComponent<AgentBrain>();
 
-        if (enemy == null)
+        if (agent == null)
         {
-            Debug.LogError($"DecisionDetectPlayer: No CharacterBrain found on {gameObject.name}");
+            Debug.LogError($"DecisionDetectPlayer: No agentBrain found on {gameObject.name}");
             enabled = false;
         }
     }
 
     private bool DetectPlayer() {
-        Collider2D playerCollider = Physics2D.OverlapCircle(enemy.transform.position, range, playerMask);
+        Collider2D playerCollider = Physics2D.OverlapCircle(agent.transform.position, range, playerMask);
         
         if (playerCollider != null) {
-            enemy.SetPlayer(playerCollider.transform);
+            agent.SetPlayer(playerCollider.transform);
             return true;
         }
 
-        enemy.SetPlayer(null);
+        agent.SetPlayer(null);
         return false;
     }
 
