@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
-  m_Name: Monk_Dialogue
+  m_Name: Caveman_Dialogue
   m_EditorClassIdentifier: 
-  Name: Monk
-  Icon: {fileID: 21300000, guid: 06eaeab3d897712428ce8a26b403a4a7, type: 3}
+  Name: Caveman
+  Icon: {fileID: 21300000, guid: 476dcbb4e8e921a45ad3f22ee23e4f0c, type: 3}
   HasInteraction: 0
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: Welcome, seeker of wisdom
+  Greeting: Hrrgh?
   Dialogue:
-  - 'Ah, a traveler. I see the weight of the world upon your shoulders. '
-  - "A river does not resist the rock\u2014it flows around it. So must we when faced
-    with obstacles."
-  - May the winds guide you, your heart stay steady, and fortune favor your journey.
+  - "HNNGH?! Sorcery! Soft rock\u2026 not soft! Town strange. Caveman confused. Caveman
+    ANGRY!"
