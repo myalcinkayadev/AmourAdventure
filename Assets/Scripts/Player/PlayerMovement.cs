@@ -13,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
-    /// <summary>
-    /// Returns whether the player is dead.
-    /// </summary>
     private bool IsDead => player.Stats.Health <= 0;
 
     private void Awake() {
@@ -25,11 +22,10 @@ public class PlayerMovement : MonoBehaviour
         playerAnimations = GetComponent<PlayerAnimations>();
     }
 
-
     private void Update()
     {
         ReadMovementInput();
-        playerAnimations.UpdateAnimation(moveDirection);
+        playerAnimations.SetMoveAnimation(moveDirection);
     }
 
     private void FixedUpdate() {
@@ -52,5 +48,4 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable() {
         actions.Disable();
     }
-
 }
