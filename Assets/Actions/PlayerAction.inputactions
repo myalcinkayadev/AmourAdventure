@@ -129,6 +129,34 @@
             ]
         },
         {
+            "name": "Attack",
+            "id": "09b6b30f-440a-4b1e-a90b-21b131c6541f",
+            "actions": [
+                {
+                    "name": "TriggerAttack",
+                    "type": "Button",
+                    "id": "6eb8bab0-aa98-4db7-9ee3-89096a4a5cd7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "94168339-03e5-4d66-ba6c-c0823eeb4c3c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Dialogue",
             "id": "74ea51cf-4deb-4ded-9e40-63af3bef1a8f",
             "actions": [
