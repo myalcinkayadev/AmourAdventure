@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) || Input.GetAxis("Vertical") > 0.5f) {
             PlayGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            QuitGame();
+        }
     }
 
     public void QuitGame() {
