@@ -92229,6 +92229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueToShow: {fileID: 11400000, guid: 1526d04205ed043bd9eb6407bb9a3cff, type: 2}
   interactionBox: {fileID: 1828393330}
+--- !u!1 &208735093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574280010751295047, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
+  m_PrefabInstance: {fileID: 1759736101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216804191
 GameObject:
   m_ObjectHideFlags: 0
@@ -93193,6 +93198,7 @@ GameObject:
   - component: {fileID: 285542370}
   - component: {fileID: 285542371}
   - component: {fileID: 285542372}
+  - component: {fileID: 285542373}
   m_Layer: 6
   m_Name: Enemy_Cyclope
   m_TagString: Enemy
@@ -93452,6 +93458,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &285542373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285542362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1001 &287158774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95989,6 +96009,7 @@ GameObject:
   - component: {fileID: 487104228}
   - component: {fileID: 487104229}
   - component: {fileID: 487104230}
+  - component: {fileID: 487104231}
   m_Layer: 6
   m_Name: Enemy_Flam
   m_TagString: Enemy
@@ -96263,6 +96284,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &487104231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487104219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!4 &494676732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3934863386394176383, guid: 1184375966a51e44fadb839cc7bbf600, type: 3}
@@ -99438,6 +99473,7 @@ GameObject:
   - component: {fileID: 956873100}
   - component: {fileID: 956873101}
   - component: {fileID: 956873102}
+  - component: {fileID: 956873103}
   m_Layer: 6
   m_Name: Enemy_Reptile
   m_TagString: Enemy
@@ -99712,6 +99748,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &956873103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956873091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!4 &961312356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1894883979339893353, guid: 49267a5621c1e7e46948dd8bbbe6f187, type: 3}
@@ -105640,6 +105690,7 @@ GameObject:
   - component: {fileID: 1011313138}
   - component: {fileID: 1011313139}
   - component: {fileID: 1011313140}
+  - component: {fileID: 1011313141}
   m_Layer: 6
   m_Name: Enemy_Bamboo
   m_TagString: Enemy
@@ -105834,7 +105885,8 @@ MonoBehaviour:
       TrueState: Attack
       FalseState: 
   - ID: Attack
-    Actions: []
+    Actions:
+    - {fileID: 1011313141}
     Transitions:
     - Decision: {fileID: 1011313140}
       TrueState: 
@@ -105899,6 +105951,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1011313141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011313130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1001 &1017944335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109796,6 +109862,7 @@ GameObject:
   - component: {fileID: 1561882491}
   - component: {fileID: 1561882492}
   - component: {fileID: 1561882493}
+  - component: {fileID: 1561882494}
   m_Layer: 6
   m_Name: Enemy_Beast
   m_TagString: Enemy
@@ -110070,6 +110137,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1561882494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561882481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1001 &1566600444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111082,16 +111163,89 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4243636995061252667, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9546018
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243636995061252667, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243636995061252667, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.053949118
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4243636995061252667, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 574280010751295047, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1759736106}
   m_SourcePrefab: {fileID: 100100000, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
 --- !u!4 &1759736102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3314522800925715750, guid: 3ef3b56abee24f64ab5f98eabca9a7bd, type: 3}
   m_PrefabInstance: {fileID: 1759736101}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &1759736106
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208735093}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3.0625}
+    newSize: {x: 4, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.375, y: 1.53125}
+      - {x: -0.8125, y: 1.34375}
+      - {x: -1.5, y: 1.21875}
+      - {x: -1.5, y: -1.53125}
+      - {x: -0.55294085, y: -1.5254598}
+      - {x: -0.5554781, y: -0.47710466}
+      - {x: 0.57218885, y: -0.48027992}
+      - {x: 0.5758233, y: -1.5283952}
+      - {x: 1.5, y: -1.53125}
+      - {x: 1.5, y: 1.53125}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &1760676886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111656,6 +111810,7 @@ GameObject:
   - component: {fileID: 1806444935}
   - component: {fileID: 1806444936}
   - component: {fileID: 1806444937}
+  - component: {fileID: 1806444938}
   m_Layer: 6
   m_Name: Enemy_Mushroom
   m_TagString: Enemy
@@ -111915,6 +112070,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1806444938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806444927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1 &1821557062
 GameObject:
   m_ObjectHideFlags: 0
@@ -111933,6 +112102,7 @@ GameObject:
   - component: {fileID: 1821557070}
   - component: {fileID: 1821557071}
   - component: {fileID: 1821557072}
+  - component: {fileID: 1821557073}
   m_Layer: 6
   m_Name: Enemy_Slime
   m_TagString: Enemy
@@ -112192,6 +112362,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1821557073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821557062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1001 &1822458425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113854,6 +114038,7 @@ GameObject:
   - component: {fileID: 2055074320}
   - component: {fileID: 2055074321}
   - component: {fileID: 2055074322}
+  - component: {fileID: 2055074323}
   m_Layer: 6
   m_Name: Enemy_Snake
   m_TagString: Enemy
@@ -114130,6 +114315,20 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &2055074323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055074311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a892fd2a3d845f984552d5e3bd3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  timeBtwAttacks: 1
 --- !u!1001 &2061362191
 PrefabInstance:
   m_ObjectHideFlags: 0
