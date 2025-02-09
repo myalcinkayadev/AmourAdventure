@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d2423ee0dd04e6286b97d1f6fe08fe, type: 3}
+  m_Name: Weapon_Book
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 6019e96afb2057f45930762b66648a64, type: 3}
+  WeaponType: 0
+  Damage: 2
+  ProjectilePrefab: {fileID: 1259890223591997116, guid: 3dcf2270b977d4dd2bc4404228508ae5, type: 3}
+  ManaCost: 2

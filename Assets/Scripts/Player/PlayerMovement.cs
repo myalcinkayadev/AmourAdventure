@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
+    public Vector2 MoveDirection => moveDirection;
     private bool IsDead => player.Stats.Health <= 0;
 
     private void Awake() {
