@@ -7,23 +7,28 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private PlayerAnimations playerAnimations;
 
-    private void Awake() {
-        playerAnimations = GetComponent<PlayerAnimations>();
-    }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            TakeDamage(1f);
-        }
-    }
-
     public void TakeDamage(float amount)
     {
-        stats.Health -= amount;
-        if (stats.Health <= 0f) {
-            stats.Health = 0;
-            PlayerDead();
+        if (stats.Health <= 0f) return;
+
+        stats.Health = Mathf.Max(0f, stats.Health - amount);
+        DamageUIManager.Instance.ShowDamageText(amount, transform);
+
+        if (stats.Health <= 0f) PlayerDead();
+    }
+
+    private void Awake() {
+        playerAnimations = GetComponent<PlayerAnimations>();
+
+        if (playerAnimations == null)
+        {
+            Debug.LogError($"PlayerHealth: No PlayerAnimations component found on {gameObject.name}.");
         }
+    }
+
+    private void Start()
+    {
+        if (stats.Health <= 0f) PlayerDead();
     }
 
     private void PlayerDead() {
