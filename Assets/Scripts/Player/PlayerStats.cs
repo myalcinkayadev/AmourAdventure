@@ -20,6 +20,13 @@ public class PlayerStats : ScriptableObject
     public float InitialNextLevelExp;
     [Range(1, 100f)]public float ExpMultiplier;
 
+    [Header("Attack Config")]
+    public float BaseDamage;
+    public float CriticalChance;
+    
+    [Tooltip("The multiplier applied to damage on a critical hit. For example, if set to 1.5, a critical hit will deal 150% of the base damage.")]
+    public float CriticalMultiplier;
+
     public void ResetStats() {
         Health = MaxHealth;
         Mana = MaxMana;

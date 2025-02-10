@@ -12,21 +12,20 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Attack Configuration")]
     [SerializeField] private float attackCooldown = 0.5f;
-
     [SerializeField] private LayerMask enemyLayer;
 
     [Header("Melee Configuration")]
     [SerializeField] private float meleeRange = 2f;
     [SerializeField] private ParticleSystem slashFX;
 
-    public Weapon CurrentWeapon { get; set; }
-
     [Header("Player Components")]
     [SerializeField] private PlayerMana playerMana;
     [SerializeField] private PlayerAnimations playerAnimations;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerStats playerStats;
 
     private PlayerAction actions;
+    public Weapon CurrentWeapon { get; set; }
 
     private float attackTimer = 0f;
     private float currentAttackRotation = 0f;
@@ -108,14 +107,14 @@ public class PlayerAttack : MonoBehaviour
     {
         if (playerMana.CurrentMana < equippedWeapon.ManaCost)
         {
-            Debug.Log("Not enough mana to cast magic!");
+            Debug.Log("Not enough playerMana to cast magic!");
             return;
         }
 
         Quaternion rotation = Quaternion.Euler(0f, 0f, currentAttackRotation);
         Projectile projectile = Instantiate(equippedWeapon.ProjectilePrefab, spawnPoint.position, rotation);
         projectile.Direction = rotation * Vector3.up;
-        projectile.Damage = equippedWeapon.Damage;
+        projectile.Damage = GetAttackDamage();
 
         playerMana.UseMana(equippedWeapon.ManaCost);
     }
@@ -132,15 +131,28 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.TryGetComponent<IDamageable>(out var damageable))
             {
-                damageable.TakeDamage(equippedWeapon.Damage);
+                damageable.TakeDamage(GetAttackDamage());
             }
         }
+    }
+
+    private float GetAttackDamage()
+    {
+        float totalDamage = playerStats.BaseDamage + CurrentWeapon.Damage;
+
+        float critRoll = Random.Range(0f, 100f);
+        if (critRoll <= playerStats.CriticalChance)
+        {
+            totalDamage *= playerStats.CriticalMultiplier;
+        }
+
+        return totalDamage;
     }
 
     private void DetermineAttackDirection()
     {
         Vector2 moveDir = playerMovement.MoveDirection;
-        // If movement is significant, update lastNonZeroMoveDirection.
+        // If playerMovement is significant, update lastNonZeroMoveDirection.
         if (moveDir.sqrMagnitude >= 0.01f) lastNonZeroMoveDirection = moveDir;
         // If idle, use the last nonzero move direction.
         else moveDir = lastNonZeroMoveDirection;

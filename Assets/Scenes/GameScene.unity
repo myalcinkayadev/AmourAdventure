@@ -99041,6 +99041,7 @@ Transform:
   - {fileID: 1563077633}
   - {fileID: 804950859}
   - {fileID: 1999911347}
+  - {fileID: 1169176302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &979632032
@@ -99217,20 +99218,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d867134c8b4d64dbd9bfaa6ab6fc85f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedWeapon: {fileID: 11400000, guid: a7d2c7316e8e24c258390d692d530069, type: 2}
+  equippedWeapon: {fileID: 11400000, guid: 24865c99b666c4a2688c24f8afa1f35a, type: 2}
   attackPositions:
   - {fileID: 1519547966}
   - {fileID: 205334434}
   - {fileID: 1563077633}
   - {fileID: 804950859}
   attackCooldown: 0.5
-  meleeRange: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  meleeRange: 2
+  slashFX: {fileID: 1169176301}
   playerMana: {fileID: 979632038}
   playerAnimations: {fileID: 979632036}
   playerMovement: {fileID: 979632032}
+  playerStats: {fileID: 11400000, guid: 4bb1216bdd8f9491f8a83c2be680c6a7, type: 2}
 --- !u!1001 &985675209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105822,9 +105825,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -110599,13 +110602,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169176299}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.36, y: 39.37, z: -0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_Father: {fileID: 979632031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1177587152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117570,7 +117573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &2587931089130647805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117648,7 +117651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &2839913308435207848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117726,7 +117729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &3816302389175092351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117804,7 +117807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &6058258111402375288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117882,7 +117885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &7715965640124986183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117960,7 +117963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &8891645385052929317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118038,7 +118041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1001 &9170839284944021693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118116,7 +118119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5508dfc7b03ca4fe38ed138e535c0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -118139,4 +118142,3 @@ SceneRoots:
   - {fileID: 187058408}
   - {fileID: 1080723080}
   - {fileID: 44247493}
-  - {fileID: 1169176302}
