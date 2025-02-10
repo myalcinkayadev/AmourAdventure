@@ -3,12 +3,12 @@ using UnityEngine.Rendering.Universal;
 
 public class DayNightCycle : MonoBehaviour
 {
+    [Header("World Timer")]
+    [SerializeField] private WorldTimer worldTimer;
+
     [Header("Global Light Settings")]
     [SerializeField] private Light2D globalLight;
     [SerializeField] private float defaultYRotation = 0f;
-
-    [Header("World Timer")]
-    [SerializeField] private WorldTimer worldTimer;
 
     [Header("Day Phases - sunrise, morning, noon, afternoon, evening, night")]
     [SerializeField, Tooltip("Configure the day phases from Sunrise to Night. Ensure the phases are sorted by their start time.")]
@@ -106,7 +106,7 @@ public class DayNightCycle : MonoBehaviour
         globalLight.color = phaseColor;
         globalLight.intensity = phaseIntensity;
 
-        RenderSettings.ambientLight = globalLight.color * globalLight.intensity;
+        //RenderSettings.ambientLight = globalLight.color * globalLight.intensity;
     }
 
     private float CalculatePhaseInterpolationFactor(float normalizedTime, int currentIndex, int nextIndex)
