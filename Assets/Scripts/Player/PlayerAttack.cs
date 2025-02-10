@@ -72,23 +72,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (attackTimer > 0f)
-            return;
+        if (attackTimer > 0f) return;
 
         attackTimer = attackCooldown;
 
-        Transform spawnPoint = currentAttackPosition;
-        if (spawnPoint == null)
-        {
-            if (attackPositions != null && attackPositions.Length > 0) {
-                spawnPoint = attackPositions[0]; // Default to Up.
-            }
-            else
-            {
-                Debug.LogError("No attack positions assigned!");
-                return;
-            }
-        }
+        Transform spawnPoint = (currentAttackPosition != null && attackPositions.Length > 0)
+            ? currentAttackPosition
+            : attackPositions[0]; // Default to Up
 
         if (equippedWeapon.WeaponType == WeaponType.Magic)
         {
@@ -121,8 +111,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void PerformMeleeAttack(Transform spawnPoint)
     {
-        slashFX.transform.position = spawnPoint.position;
-        slashFX.Play();
+        if (slashFX != null)
+        {
+            slashFX.transform.position = spawnPoint.position;
+            slashFX.Play();
+        }
 
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(spawnPoint.position, meleeRange, enemyLayer);
         Debug.Log($"HitCount: {hitColliders.Length}");
