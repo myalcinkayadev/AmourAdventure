@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Player Config")]
-    [SerializeField]
-    private float speed = 5f;
+    [Header("Movement Settings")]
+    [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float runSpeed = 9f;
 
     private Player player;
     private PlayerAction actions;
@@ -12,15 +13,31 @@ public class PlayerMovement : MonoBehaviour
     private PlayerAnimations playerAnimations;
 
     private Vector2 moveDirection;
-
     public Vector2 MoveDirection => moveDirection;
     private bool IsDead => player.Stats.Health <= 0;
 
-    private void Awake() {
+    private bool isRunning = false;
+
+    private void Awake()
+    {
         player = GetComponent<Player>();
         actions = new PlayerAction();
         rb2D = GetComponent<Rigidbody2D>();
         playerAnimations = GetComponent<PlayerAnimations>();
+    }
+
+    private void OnEnable()
+    {
+        actions.Enable();
+        actions.Movement.Run.performed += OnRunPerformed;
+        actions.Movement.Run.canceled += OnRunCanceled;
+    }
+
+    private void OnDisable()
+    {
+        actions.Movement.Run.performed -= OnRunPerformed;
+        actions.Movement.Run.canceled -= OnRunCanceled;
+        actions.Disable();
     }
 
     private void Update()
@@ -29,24 +46,31 @@ public class PlayerMovement : MonoBehaviour
         playerAnimations.SetMoveAnimation(moveDirection);
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         Move();
     }
 
-    private void Move() {
+    private void Move()
+    {
         if (IsDead) return;
 
-        rb2D.MovePosition(rb2D.position + moveDirection * (speed * Time.fixedDeltaTime));
+        float currentSpeed = isRunning ? runSpeed : walkSpeed;
+        rb2D.MovePosition(rb2D.position + moveDirection * (currentSpeed * Time.fixedDeltaTime));
     }
 
-    private void ReadMovementInput() {
+    private void ReadMovementInput()
+    {
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
     }
 
-    private void OnEnable() {
-        actions.Enable();
+    private void OnRunPerformed(InputAction.CallbackContext context)
+    {
+        isRunning = true;
     }
-    private void OnDisable() {
-        actions.Disable();
+
+    private void OnRunCanceled(InputAction.CallbackContext context)
+    {
+        isRunning = false;
     }
 }
