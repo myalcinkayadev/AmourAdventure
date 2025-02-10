@@ -12,20 +12,25 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Attack Configuration")]
     [SerializeField] private float attackCooldown = 0.5f;
-    [SerializeField] private float meleeRange = 2f;
+
     [SerializeField] private LayerMask enemyLayer;
+
+    [Header("Melee Configuration")]
+    [SerializeField] private float meleeRange = 2f;
+    [SerializeField] private ParticleSystem slashFX;
+
+    public Weapon CurrentWeapon { get; set; }
 
     [Header("Player Components")]
     [SerializeField] private PlayerMana playerMana;
     [SerializeField] private PlayerAnimations playerAnimations;
     [SerializeField] private PlayerMovement playerMovement;
 
+    private PlayerAction actions;
+
     private float attackTimer = 0f;
     private float currentAttackRotation = 0f;
     private Transform currentAttackPosition;
-
-    private PlayerAction actions;
-    private Collider[] meleeHitBuffer = new Collider[10];
 
     private Vector2 lastNonZeroMoveDirection = Vector2.up;
 
@@ -36,6 +41,17 @@ public class PlayerAttack : MonoBehaviour
         if (playerMana == null) playerMana = GetComponent<PlayerMana>();
         if (playerAnimations == null) playerAnimations = GetComponent<PlayerAnimations>();
         if (playerMovement == null) playerMovement = GetComponent<PlayerMovement>();
+    }
+
+    private void Start() {
+        CurrentWeapon = equippedWeapon;
+    }
+
+    private void Update()
+    {
+        if (attackTimer > 0f) attackTimer -= Time.deltaTime;
+
+        DetermineAttackDirection();
     }
 
     private void OnEnable()
@@ -50,13 +66,6 @@ public class PlayerAttack : MonoBehaviour
         actions.Disable();
     }
 
-    private void Update()
-    {
-        if (attackTimer > 0f) attackTimer -= Time.deltaTime;
-
-        DetermineAttackDirection();
-    }
-
     private void OnAttackTriggered(InputAction.CallbackContext ctx)
     {
         Attack();
@@ -69,31 +78,12 @@ public class PlayerAttack : MonoBehaviour
 
         attackTimer = attackCooldown;
 
-        if (equippedWeapon.WeaponType == WeaponType.Magic)
-        {
-            if (playerMana.CurrentMana < equippedWeapon.ManaCost)
-            {
-                Debug.Log("Not enough mana to cast magic!");
-                return;
-            }
-            FireProjectile();
-            playerMana.UseMana(equippedWeapon.ManaCost);
-        }
-        else if (equippedWeapon.WeaponType == WeaponType.Melee)
-        {
-            PerformMeleeAttack();
-        }
-
-        playerAnimations.SetAttackAnimation(true);
-        StartCoroutine(StopAttackAnimationAfterDelay(0.3f));
-    }
-
-    private void FireProjectile()
-    {
         Transform spawnPoint = currentAttackPosition;
         if (spawnPoint == null)
         {
-            if (attackPositions != null && attackPositions.Length > 0) spawnPoint = attackPositions[0]; // Default to Up.
+            if (attackPositions != null && attackPositions.Length > 0) {
+                spawnPoint = attackPositions[0]; // Default to Up.
+            }
             else
             {
                 Debug.LogError("No attack positions assigned!");
@@ -101,19 +91,49 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
+        if (equippedWeapon.WeaponType == WeaponType.Magic)
+        {
+            PerformMagicAttack(spawnPoint);
+        }
+        else if (equippedWeapon.WeaponType == WeaponType.Melee)
+        {
+            PerformMeleeAttack(spawnPoint);
+        }
+
+        playerAnimations.SetAttackAnimation(true);
+        StartCoroutine(StopAttackAnimationAfterDelay(0.3f));
+    }
+
+    private void PerformMagicAttack(Transform spawnPoint)
+    {
+        if (playerMana.CurrentMana < equippedWeapon.ManaCost)
+        {
+            Debug.Log("Not enough mana to cast magic!");
+            return;
+        }
+
         Quaternion rotation = Quaternion.Euler(0f, 0f, currentAttackRotation);
         Projectile projectile = Instantiate(equippedWeapon.ProjectilePrefab, spawnPoint.position, rotation);
         projectile.Direction = rotation * Vector3.up;
         projectile.Damage = equippedWeapon.Damage;
+
+        playerMana.UseMana(equippedWeapon.ManaCost);
     }
 
-    private void PerformMeleeAttack()
+    private void PerformMeleeAttack(Transform spawnPoint)
     {
-        int hitCount = Physics.OverlapSphereNonAlloc(transform.position, meleeRange, meleeHitBuffer, enemyLayer);
-        for (int i = 0; i < hitCount; i++)
+        slashFX.transform.position = spawnPoint.position;
+        slashFX.Play();
+
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(spawnPoint.position, meleeRange, enemyLayer);
+        Debug.Log($"HitCount: {hitColliders.Length}");
+        
+        foreach (Collider2D hit in hitColliders)
         {
-            IDamageable damageable = meleeHitBuffer[i].GetComponent<IDamageable>();
-            if (damageable != null) damageable.TakeDamage(equippedWeapon.Damage);
+            if (hit.TryGetComponent<IDamageable>(out var damageable))
+            {
+                damageable.TakeDamage(equippedWeapon.Damage);
+            }
         }
     }
 
