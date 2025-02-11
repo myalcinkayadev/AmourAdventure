@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NPC_Spirit
+  m_Controller: {fileID: 9100000, guid: d2fb84b9be66e42b89dd516361ea193b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d1ea70ea0b8fd40549091db4adc2bf38, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 21c6921fc9cab417daadf86981618a5f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d196763f389da4e4fa5508291d5d0157, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: daa8ee45e3259430784c053b15695021, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 358ae899418bc4d2799bfe97084de1c7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6474d33dbf9e14c7592dfe0c5271189d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2249e7e536bec4536b55a1cbf4d3468c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fe825267a1ef84d2c92cfeddd7ca2f67, type: 2}

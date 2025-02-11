@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2208712db07d9ce4386d8533652d0396
+guid: 7954f8de85e7f4b95a20a5a09d34b30d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -132,10 +132,10 @@ TextureImporter:
       name: SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 2
-        width: 15
-        height: 13
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
