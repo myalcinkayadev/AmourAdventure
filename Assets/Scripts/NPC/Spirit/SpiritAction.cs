@@ -20,9 +20,9 @@ public class SpiritAction : MonoBehaviour
         DialogueManager.Instance.OnDialogueEnd -= OnDialogueEnd;
     }
 
-    private void OnDialogueEnd()
+    private void OnDialogueEnd(string name)
     {
-        if (innerLight != null)
+        if (innerLight != null && gameObject.name == name)
         {
             StartCoroutine(IncreaseLightThenDecrease());
         }
