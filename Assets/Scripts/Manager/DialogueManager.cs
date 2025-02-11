@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,6 +31,8 @@ public class DialogueManager : Singleton<DialogueManager>
     private bool isTyping;
     private string currentSentence;
 
+    public event Action OnDialogueEnd;
+
     protected override void Awake() {
         base.Awake();
         actions = new PlayerAction();
@@ -37,9 +40,17 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void EndDialogue()
     {
+        if (dialoguePanel.activeSelf == true) {
+            OnDialogueEnd?.Invoke();
+        }
+
         dialoguePanel.SetActive(false);
         dialogueQueue.Clear();
+        npcDialogueTMP.text = "";
+        npcIcon.sprite = null;
+        npcNameTMP.text = "";
         isTyping = false;
+
     }
 
     private void Start()
