@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Player Stats")]
@@ -27,11 +28,14 @@ public class PlayerStats : ScriptableObject
     [Tooltip("The multiplier applied to damage on a critical hit. For example, if set to 1.5, a critical hit will deal 150% of the base damage.")]
     public float CriticalMultiplier;
 
+    public event Action OnStatsReset;
+
     public void ResetStats() {
         Health = MaxHealth;
         Mana = MaxMana;
         Level = 1;
         CurrentExp = 0f;
         NextLevelExp = InitialNextLevelExp;
+        OnStatsReset?.Invoke();
     }
 }
