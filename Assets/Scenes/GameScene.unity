@@ -99534,6 +99534,7 @@ GameObject:
   - component: {fileID: 979632038}
   - component: {fileID: 979632039}
   - component: {fileID: 979632041}
+  - component: {fileID: 979632042}
   m_Layer: 7
   m_Name: Player_Xeno
   m_TagString: Player
@@ -99693,6 +99694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 4bb1216bdd8f9491f8a83c2be680c6a7, type: 2}
+  criticalThreshold: 0.3
 --- !u!114 &979632036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99808,6 +99810,24 @@ MonoBehaviour:
   playerAnimations: {fileID: 979632036}
   playerMovement: {fileID: 979632032}
   playerStats: {fileID: 11400000, guid: 4bb1216bdd8f9491f8a83c2be680c6a7, type: 2}
+--- !u!114 &979632042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979632029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9abfcd8955a48e3b8ab9bebcca6084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 632478479}
+  playerHealth: {fileID: 979632035}
+  criticalThreshold: 0.3
+  normalIntensity: 0
+  blinkIntensity: 0.7
+  blinkInterval: 0.5
 --- !u!1001 &985675209
 PrefabInstance:
   m_ObjectHideFlags: 0
