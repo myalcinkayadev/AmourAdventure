@@ -104,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0f, 0f, currentAttackRotation);
         Projectile projectile = Instantiate(equippedWeapon.ProjectilePrefab, spawnPoint.position, rotation);
         projectile.Direction = rotation * Vector3.up;
-        projectile.Damage = GetAttackDamage();
+        projectile.Damage = CalculateAttackDamage();
 
         playerMana.UseMana(equippedWeapon.ManaCost);
     }
@@ -124,12 +124,12 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.TryGetComponent<IDamageable>(out var damageable))
             {
-                damageable.TakeDamage(GetAttackDamage());
+                damageable.TakeDamage(CalculateAttackDamage());
             }
         }
     }
 
-    private float GetAttackDamage()
+    private float CalculateAttackDamage()
     {
         float totalDamage = playerStats.BaseDamage + CurrentWeapon.Damage;
 
