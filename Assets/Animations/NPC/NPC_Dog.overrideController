@@ -9,11 +9,7 @@ AnimatorOverrideController:
   m_Name: NPC_Dog
   m_Controller: {fileID: 9100000, guid: d2fb84b9be66e42b89dd516361ea193b, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 358ae899418bc4d2799bfe97084de1c7, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d47fac56fbecd4d438b5e4c47eb85eef, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: d1ea70ea0b8fd40549091db4adc2bf38, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d47fac56fbecd4d438b5e4c47eb85eef, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d196763f389da4e4fa5508291d5d0157, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d47fac56fbecd4d438b5e4c47eb85eef, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 2249e7e536bec4536b55a1cbf4d3468c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 172548c18094a44ca87eaa6dc19480bd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 358ae899418bc4d2799bfe97084de1c7, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: d47fac56fbecd4d438b5e4c47eb85eef, type: 2}

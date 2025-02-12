@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
+  m_Name: Fisherman_Dialogue
+  m_EditorClassIdentifier: 
+  Name: Fisherman
+  Icon: {fileID: -7527145504033472756, guid: 293a669dcab44438f9100c63caeb648a, type: 3}
+  HasInteraction: 0
+  InteractionType: 0
+  IsLLM: 0
+  ApiUrl: 
+  Greeting: Aye
+  Dialogue:
+  - Aye
+  - "Caught me a big one this mornin\u2019! Nearly pulled me straight into the water,
+    it did! Aye, never had a fight like that before. Sun barely peekin\u2019 over
+    the horizon, "
+  - "mist rollin\u2019 off the waves, just me an\u2019 the sea\u2014peaceful, aye,
+    \u2018til me line went tight. Not just tight\u2014snapped like a whip in me hands!"
+  - "Rod bent near in half, reel screamin\u2019 like a banshee. I held on, braced
+    me boots against the planks, but whatever beast was on the other end had other
+    plans! \n"
+  - "Next thing I know, I\u2019m skiddin\u2019 across the deck, belly first, draggin\u2019
+    me nails against the wood! Nearly went overboard, swear on me own beard!"
+  - "Rope burn on me hands, sweat in me eyes, but I wasn\u2019t lettin\u2019 go!
+    Not this time! A tug. A stronger tug. Then\u2014splash! "
+  - "A great tail, thick as a barrel, breaks the surface, sendin\u2019 up a spray
+    like a storm\u2019s first wave."
+  - "Coulda sworn I saw an eye, gleamin\u2019 like polished gold, starin\u2019 right
+    at me. Then\u2014snap! Line went slack. Just like that. Gone. Vanished into the
+    deep. "
+  - "Sat there pantin\u2019 like a fool, hands shakin\u2019, heart racin\u2019. What
+    was it? No ordinary fish, that\u2019s for sure. Some say the deep\u2019s got
+    creatures older than the sea itself.\n"
+  - "Aye\u2026 next time, I\u2019ll be ready."

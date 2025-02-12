@@ -10,7 +10,6 @@ public class WorldTimer : MonoBehaviour
     [Header("Weather Settings")]
     [SerializeField] private float minWeatherDuration = 120f;
     [SerializeField] private float maxWeatherDuration = 300f;
-    [SerializeField] private WeatherType initialWeather = WeatherType.Clear;
 
     public event Action<float> OnDayCycleUpdate;  // Normalized day time [0,1]
     public event Action<WeatherType> OnWeatherChanged;
@@ -45,7 +44,6 @@ public class WorldTimer : MonoBehaviour
     }
     private void ChangeWeather()
     {
-        Debug.Log("ChangeWeather");
         int weatherCount = Enum.GetNames(typeof(WeatherType)).Length;
         currentWeather = (WeatherType)UnityEngine.Random.Range(0, weatherCount);
         OnWeatherChanged?.Invoke(currentWeather);

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
+  m_Name: Oldman_Dialogue
+  m_EditorClassIdentifier: 
+  Name: Oldman
+  Icon: {fileID: -7527145504033472756, guid: f71d46fb492854c4faf7365f860e7326, type: 3}
+  HasInteraction: 0
+  InteractionType: 0
+  IsLLM: 1
+  ApiUrl: 
+  Greeting: Eureka!
+  Dialogue:
+  - My bones may be old, but my mind! HA! My mind is a raging inferno of chaotic
+    brilliance!
+  - "A little explosion never hurt anyone! \u2026Well, maybe a few people! But the
+    progress!"

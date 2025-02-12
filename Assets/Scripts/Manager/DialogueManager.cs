@@ -21,7 +21,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private TextMeshProUGUI npcDialogueTMP;
 
     [Header("Typing Settings")]
-    [SerializeField] private float typingSpeed = 0.03f; // Adjust speed of typing effect
+    [SerializeField] private float typingSpeed = 0.03f; 
 
     public NPCInteraction NPCSelected { get; set; }
 
@@ -31,17 +31,19 @@ public class DialogueManager : Singleton<DialogueManager>
     private bool isTyping;
     private string currentSentence;
 
-    public event Action OnDialogueEnd;
+    public event Action<string> OnDialogueEnd;
 
-    protected override void Awake() {
+    protected override void Awake()
+    {
         base.Awake();
         actions = new PlayerAction();
     }
 
     public void EndDialogue()
     {
-        if (dialoguePanel.activeSelf == true) {
-            OnDialogueEnd?.Invoke();
+        if (dialoguePanel.activeSelf && NPCSelected != null)
+        {
+            OnDialogueEnd?.Invoke(NPCSelected.name);
         }
 
         dialoguePanel.SetActive(false);
@@ -51,18 +53,20 @@ public class DialogueManager : Singleton<DialogueManager>
         npcNameTMP.text = "";
         isTyping = false;
 
+        NPCSelected = null;
     }
 
     private void Start()
     {
-        actions.Dialogue.Interact.performed += ctx => StartDialogue();
-        actions.Dialogue.Continue.performed += ctx => ContinueDialogue();
+        if (actions == null) actions = new PlayerAction();
+
+        actions.Interaction.Interact.performed += ctx => StartDialogue();
+        actions.Interaction.Continue.performed += ctx => ContinueDialogue();
     }
 
     private void StartDialogue()
     {
-        if (NPCSelected == null || dialoguePanel.activeSelf)
-            return;
+        if (NPCSelected == null || dialoguePanel.activeSelf) return;
 
         dialoguePanel.SetActive(true);
         npcIcon.sprite = NPCSelected.DialogueToShow.Icon;
@@ -70,10 +74,12 @@ public class DialogueManager : Singleton<DialogueManager>
 
         dialogueQueue.Clear();
 
-        if (!NPCSelected.DialogueToShow.IsLLM) {
+        if (!NPCSelected.DialogueToShow.IsLLM)
+        {
             LoadDialogueFromNPC();
         }
-        else {
+        else
+        {
             LoadDialogueFromLLM(NPCSelected.DialogueToShow.ApiUrl);
         }
     }
@@ -163,11 +169,14 @@ public class DialogueManager : Singleton<DialogueManager>
         isTyping = false;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
+        if (actions == null) actions = new PlayerAction(); 
         actions.Enable();
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         actions.Disable();
     }
 }

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 01010d29df772ee42ba679aba3814bcc
+guid: bc6867d1e2aa946579ec281c2594e50e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7196127794083022825
+    second: SpriteSheet (1)_0
+  - first:
+      213: 53281172512365675
+    second: SpriteSheet (1)_1
+  - first:
+      213: -9052007091504146450
+    second: SpriteSheet (1)_2
+  - first:
+      213: -3969095921099730899
+    second: SpriteSheet (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -94,7 +106,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Server
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -127,6 +139,50 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e86eecc83fa7493b9a52dd436802ea5
+      internalID: -404042140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ad7929ac42f4ad39fc239f3cbb09b8
+      internalID: 1407045449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 16
         height: 16
@@ -138,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18439430913e469db94af8beeb1cceb
-      internalID: 2045070536
+      spriteID: 1aacaeee85e4842b2b98bcc3a1cfe8bf
+      internalID: 957674749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_1
+      name: SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 16
@@ -160,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36fb74b5db4094d8389aeb627515c562
-      internalID: -1060051350
+      spriteID: 2cb963a007bb24ef7bd866f618664b5e
+      internalID: -1472613360
       vertices: []
       indices: 
       edges: []
@@ -170,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a72e92f9775174c7cbe553e2846005c1
     internalID: 0
     vertices: []
     indices: 
@@ -180,8 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SpriteSheet_0: 2045070536
-      SpriteSheet_1: -1060051350
+      SpriteSheet_0: -404042140
+      SpriteSheet_1: 1407045449
+      SpriteSheet_2: 957674749
+      SpriteSheet_3: -1472613360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
