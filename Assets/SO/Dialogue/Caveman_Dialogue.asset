@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
   m_Name: Caveman_Dialogue
   m_EditorClassIdentifier: 
-  Name: Caveman
+  Name: Grog
   Icon: {fileID: 21300000, guid: 476dcbb4e8e921a45ad3f22ee23e4f0c, type: 3}
   HasInteraction: 0
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: Hrrgh?
+  Greeting: HNNGH?
   Dialogue:
-  - "HNNGH?! Sorcery! Soft rock\u2026 not soft! Town strange. Caveman confused. Caveman
-    ANGRY!"
+  - "HNNGH?! B\xFCy\xFC m\xFC bu?! Yumu\u015Fak ta\u015F\u2026 ama yumu\u015Fak de\u011Fil!
+    Grog dokundu, vurdu, hatta \u0131s\u0131rd\u0131\u2026 Y\u0130NE DE SERT! Bu
+    nas\u0131l olur?!"
+  - "Kasaba \xE7ok garip! Ta\u015F yumu\u015Fak olmal\u0131! Ama de\u011Fil! Grog
+    kafas\u0131 kar\u0131\u015F\u0131k\u2026 Grog KIZGIN!\n"
