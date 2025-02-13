@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
   m_Name: Monk_Dialogue
   m_EditorClassIdentifier: 
-  Name: Monk
+  Name: "Bilge Ke\u015Fi\u015F"
   Icon: {fileID: 21300000, guid: 06eaeab3d897712428ce8a26b403a4a7, type: 3}
   HasInteraction: 0
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: Welcome, seeker of wisdom
+  Greeting: "Ho\u015F geldin, bilgelik avc\u0131s\u0131"
   Dialogue:
-  - 'Ah, a traveler. I see the weight of the world upon your shoulders. '
-  - "A river does not resist the rock\u2014it flows around it. So must we when faced
-    with obstacles."
-  - May the winds guide you, your heart stay steady, and fortune favor your journey.
+  - "Ah, bir yolcu\u2026 Omuzlar\u0131nda d\xFCnyan\u0131n y\xFCk\xFCn\xFC g\xF6r\xFCyorum.
+    Nehir, kayaya direnmez; etraf\u0131ndan akar. Biz de \xF6yle yapmal\u0131y\u0131z,
+    engellerle kar\u015F\u0131la\u015F\u0131nca.\n"
+  - "R\xFCzg\xE2r yolunu g\xF6stersin, kalbin sars\u0131lmas\u0131n ve talih seni
+    kollas\u0131n. Yolun a\xE7\u0131k olsun, gezgin."
