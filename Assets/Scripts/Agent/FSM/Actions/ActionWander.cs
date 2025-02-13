@@ -10,6 +10,8 @@ public class ActionWander : FSMAction
     private Vector3 movePosition;
     private float timer;
 
+    private AgentAnimation wanderAnimation;
+
     public override void Act()
     {
         if (timer <= 0f)
@@ -27,11 +29,16 @@ public class ActionWander : FSMAction
         if (Vector3.Distance(transform.position, movePosition) < 0.5f) return;
 
         Vector3 direction = (movePosition - transform.position).normalized;
-        transform.Translate(direction * (speed * Time.deltaTime));
+        Vector3 movement = direction * (speed * Time.deltaTime);
+        transform.Translate(movement);
+
+        if (wanderAnimation != null) wanderAnimation.SetMoveAnimation(movement);
     }
 
     private void Awake()
     {
+        wanderAnimation = GetComponent<AgentAnimation>();
+
         ResetWanderTimer();
         SetDestination();
     }

@@ -9,6 +9,8 @@ public class ActionChase : FSMAction
 
     private AgentBrain agentBrain;
 
+    private AgentAnimation chaseAnimation;
+
     public override void Act()
     {
         ChasePlayer();
@@ -16,6 +18,7 @@ public class ActionChase : FSMAction
 
     private void Awake() {
         agentBrain = GetComponent<AgentBrain>();
+        chaseAnimation = GetComponent<AgentAnimation>();
 
         if (agentBrain == null)
         {
@@ -29,7 +32,10 @@ public class ActionChase : FSMAction
         
         Vector3 directionToPlayer = agentBrain.Player.position - transform.position;
         if (directionToPlayer.magnitude >= ChaseRange) {
-            transform.Translate(directionToPlayer.normalized * (chaseSpeed * Time.deltaTime));
+            Vector3 movement = directionToPlayer.normalized * (chaseSpeed * Time.deltaTime);
+            transform.Translate(movement);
+            
+            if (chaseAnimation != null) chaseAnimation.SetMoveAnimation(movement);
         }
     }
 }
