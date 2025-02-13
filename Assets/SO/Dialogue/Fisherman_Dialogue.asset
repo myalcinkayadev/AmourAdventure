@@ -12,33 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
   m_Name: Fisherman_Dialogue
   m_EditorClassIdentifier: 
-  Name: Fisherman
+  Name: "\u0130dris Reis"
   Icon: {fileID: -7527145504033472756, guid: 293a669dcab44438f9100c63caeb648a, type: 3}
   HasInteraction: 0
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: Aye
+  Greeting: Ula
   Dialogue:
-  - Aye
-  - "Caught me a big one this mornin\u2019! Nearly pulled me straight into the water,
-    it did! Aye, never had a fight like that before. Sun barely peekin\u2019 over
-    the horizon, "
-  - "mist rollin\u2019 off the waves, just me an\u2019 the sea\u2014peaceful, aye,
-    \u2018til me line went tight. Not just tight\u2014snapped like a whip in me hands!"
-  - "Rod bent near in half, reel screamin\u2019 like a banshee. I held on, braced
-    me boots against the planks, but whatever beast was on the other end had other
-    plans! \n"
-  - "Next thing I know, I\u2019m skiddin\u2019 across the deck, belly first, draggin\u2019
-    me nails against the wood! Nearly went overboard, swear on me own beard!"
-  - "Rope burn on me hands, sweat in me eyes, but I wasn\u2019t lettin\u2019 go!
-    Not this time! A tug. A stronger tug. Then\u2014splash! "
-  - "A great tail, thick as a barrel, breaks the surface, sendin\u2019 up a spray
-    like a storm\u2019s first wave."
-  - "Coulda sworn I saw an eye, gleamin\u2019 like polished gold, starin\u2019 right
-    at me. Then\u2014snap! Line went slack. Just like that. Gone. Vanished into the
-    deep. "
-  - "Sat there pantin\u2019 like a fool, hands shakin\u2019, heart racin\u2019. What
-    was it? No ordinary fish, that\u2019s for sure. Some say the deep\u2019s got
-    creatures older than the sea itself.\n"
-  - "Aye\u2026 next time, I\u2019ll be ready."
+  - "Ula sabah\u0131n k\xF6r\xFCnde bi\u2019 \xE7\u0131kt\u0131m denize. G\xFCne\u015F
+    daha yeni uyaniyi, denizin \xFCst\xFC pus, her taraf sessiz sakin\u2026 Ta ki
+    oltam bi gerildi ha!\n"
+  - "Ama nas\u0131l gerildi, anlatamam! Sanki denizin kendisi beni i\xE7eri \xE7ekmeye
+    \xE7ali\u015Fiyi! \u0130p bir gerginle\u015Fti, sonra da \u015Fak diye elimde
+    patlad\u0131!\n\n"
+  - "Kam\u0131\u015F yamuldu, makara bir ba\u011F\u0131r\u0131yi, sanki cin \xE7arpm\u0131\u015F
+    gibi! Tuttum tutmas\u0131na ama nafile, g\xFCc\xFCm yetmiyo! Bi\u2019 yandan
+    denize s\xFCr\xFCkleniyom!\n"
+  - "Botun tahtalar\u0131na abanm\u0131\u015F\u0131m, t\u0131rnaklar\u0131m tahtaya
+    ge\xE7mi\u015F, ama bal\u0131k neyse beni \xE7ekiyo! Dedim \u201CBug\xFCn denizin
+    dibini boyluyoz!\u201D\n"
+  - "Ellerim yan\u0131k, ter g\xF6z\xFCmden ak\u0131yo, ama b\u0131rakmam, yok u\u015Fak!
+    Bu sefer pes etmek yok! Bal\u0131k de\u011Fil sanki canavar!\n"
+  - "Sonra bi bakt\u0131m, \u015Faaak! Sular y\xFCkseldi, bi kuyruk \xE7\u0131kt\u0131
+    ortaya! Ama ne kuyruk! F\u0131\xE7\u0131 kadar kal\u0131n, vurdu, her taraf su
+    oldu!\n"
+  - "Bir an g\xF6z g\xF6ze geldik\u2026 Yeminle s\xF6yl\xFCyorum, alt\u0131n gibi
+    parl\u0131yo g\xF6z\xFC! Sanki beni izliyodu, dalga ge\xE7iyo!\n"
+  - "Ve bi anda\u2026 \u015Faaat! \u0130p koptu, bitti gitti. Ben mi? Oldu\u011Fum
+    yerde kald\u0131m, nefesim yetmiyo, ellerim titriyo, kalbim davul gibi at\u0131yo!\n"
+  - "\u201CNe etti gitti bu? \u0130nsan m\u0131yd\u0131, canavar m\u0131yd\u0131?\u201D
+    Vallahi bilemem\u2026 Ama \u015Funu diyim ha, bir dahakine haz\u0131r olacam!\n"
+  - "Ula Karadeniz, seni yiyece\u011Fum! "
