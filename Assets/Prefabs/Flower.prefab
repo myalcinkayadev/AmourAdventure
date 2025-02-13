@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7356794477668383566}
   - component: {fileID: 2117298210424629181}
   - component: {fileID: 142085507369349566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.41, y: -1.06, z: -0.05575402}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4307429793236398228}
@@ -148,7 +148,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.10064697}
-  m_Radius: 0.39935303
+  m_Radius: 0.4
 --- !u!114 &142085507369349566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sparkleEffect: {fileID: 2640533722085773711}
-  bloomSound: {fileID: 8300000, guid: ed7174d6e0c5c448384b9352e9ce5392, type: 3}
-  minPitch: 0.9
+  bloomSound: {fileID: 8300000, guid: a428ad951c33c4b7b9eeaeb5443253e4, type: 3}
+  minPitch: 1
   maxPitch: 1.2
 --- !u!1 &3362293775851867640
 GameObject:

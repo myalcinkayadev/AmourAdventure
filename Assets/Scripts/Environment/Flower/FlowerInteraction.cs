@@ -6,9 +6,6 @@ public class FlowerInteraction : MonoBehaviour
     [SerializeField] private ParticleSystem sparkleEffect;
     [SerializeField] private AudioClip bloomSound;
 
-    [SerializeField] private float minPitch = 0.6f;  // Lower limit (slightly deep sound)
-    [SerializeField] private float maxPitch = 1.2f;  // Upper limit (slightly high sound)
-
     private bool isTouched = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,8 +21,7 @@ public class FlowerInteraction : MonoBehaviour
         sparkleEffect.Play();
 
         if (bloomSound != null) {
-            float pitch = Random.Range(minPitch, maxPitch);
-            AudioManager.Instance.PlaySFX(bloomSound, 1, pitch);
+            AudioManager.Instance.PlaySFX(bloomSound, 1, 1);
         }
 
         yield return new WaitForSeconds(0.5f);
