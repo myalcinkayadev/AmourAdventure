@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-[System.Serializable]
+[Serializable]
 public class DialogueResponse
 {
     public string[] dialogue;
@@ -23,6 +24,11 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("Typing Settings")]
     [SerializeField] private float typingSpeed = 0.03f; 
 
+    private CinemachineCamera cinemachineCamera;
+    private readonly float zoomedSize = 3f;
+    private float defaultSize = 5f; 
+    private readonly float zoomSpeed = 0.5f;
+
     public NPCInteraction NPCSelected { get; set; }
 
     private PlayerAction actions;
@@ -37,6 +43,15 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         base.Awake();
         actions = new PlayerAction();
+
+        if (cinemachineCamera == null) {
+            // Trying to find automatically
+            cinemachineCamera = FindFirstObjectByType<CinemachineCamera>();
+        }
+
+        if (cinemachineCamera != null) {
+            defaultSize = cinemachineCamera.Lens.OrthographicSize;
+        }
     }
 
     public void EndDialogue()
@@ -46,6 +61,7 @@ public class DialogueManager : Singleton<DialogueManager>
             OnDialogueEnd?.Invoke(NPCSelected.name);
         }
 
+        StartCoroutine(ZoomCamera(defaultSize));
         dialoguePanel.SetActive(false);
         dialogueQueue.Clear();
         npcDialogueTMP.text = "";
@@ -71,6 +87,7 @@ public class DialogueManager : Singleton<DialogueManager>
         dialoguePanel.SetActive(true);
         npcIcon.sprite = NPCSelected.DialogueToShow.Icon;
         npcNameTMP.text = NPCSelected.DialogueToShow.Name;
+        StartCoroutine(ZoomCamera(zoomedSize));
 
         dialogueQueue.Clear();
 
@@ -167,6 +184,23 @@ public class DialogueManager : Singleton<DialogueManager>
             yield return new WaitForSeconds(typingSpeed);
         }
         isTyping = false;
+    }
+
+    private IEnumerator ZoomCamera(float targetSize)
+    {
+        if (cinemachineCamera == null) yield break;
+
+        float startSize = cinemachineCamera.Lens.OrthographicSize;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < zoomSpeed)
+        {
+            elapsedTime += Time.deltaTime;
+            cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(startSize, targetSize, elapsedTime / zoomSpeed);
+            yield return null;
+        }
+
+        cinemachineCamera.Lens.OrthographicSize = targetSize;
     }
 
     private void OnEnable()
