@@ -18,6 +18,6 @@ MonoBehaviour:
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: Bark bark
+  Greeting: Hav hav hav
   Dialogue:
-  - bark bark bark
+  - "Hav hav hav Vay can\u0131na! Sen geldin! Kuyru\u011Fumu durduram\u0131yorum!"
