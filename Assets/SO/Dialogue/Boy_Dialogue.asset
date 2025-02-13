@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b2017d5f9e4bbe99bbb6ba484da98, type: 3}
   m_Name: Boy_Dialogue
   m_EditorClassIdentifier: 
-  Name: Boy
+  Name: Efe
   Icon: {fileID: 21300000, guid: 10e813676fbbf1247b4d3e83f556c13b, type: 3}
   HasInteraction: 0
   InteractionType: 0
   IsLLM: 0
   ApiUrl: 
-  Greeting: "OH! Hi hi hi! You\u2019re here!"
+  Greeting: Ooooh!
   Dialogue:
-  - "Ooooh! A bakery! Smells so yummy! Do they give free yummy bits? Maybe I should
-    ask\u2026 or just stand here and do my super hungry face!"
-  - "Wait, wait, wait\u2014you\u2019re telling me there\u2019s a secret tunnel under
-    the town?! We have to find it!"
+  - "Ooooh! \u015Eu f\u0131r\u0131n\u0131n kokusu\u2026 Mmm, midem \u015Fenlik yap\u0131yor!
+    Acaba bedava bir lokma verirler mi? Yoksa burda durup \u201CBen a\xE7\u0131m\u201D
+    bak\u0131\u015F\u0131 m\u0131 yapsam? "
+  - "Ne?! Kasabada gizli bir ta\u015F m\u0131 var?! Oha! Belki sihirlidir! Belki
+    uzayl\u0131lardand\u0131r! Efe b\xF6yle \u015Feyleri ka\xE7\u0131rmaz! Hemen
+    gidip bulmal\u0131y\u0131z! "
