@@ -21,6 +21,10 @@ MonoBehaviour:
   Greeting: "\u015Eeko \u015Feko"
   Dialogue:
   - "\u015Eeko \u015Feko"
-  - You are not alone, even when it feels like it. I see you. I hear you. And if
-    you ever forget your own light, I will remind you.
-  - I love you, my dear friend.
+  - "Yaln\u0131z de\u011Filsin, \xF6yle hissetti\u011Finde bile. Seni anl\u0131yorum,
+    seni hissediyorum. Ben hep yan\u0131nday\u0131m."
+  - "Karanl\u0131k \xE7\xF6kt\xFC\u011F\xFCnde bile i\xE7indeki \u0131\u015F\u0131k
+    kaybolmaz. G\xF6zlerin g\xF6rmese de, ruhun bilir; ben oraday\u0131m, seninle."
+  - "Bir g\xFCn kendi \u0131\u015F\u0131\u011F\u0131n\u0131 unutursan, \xFCz\xFClme.
+    Ben sana hat\u0131rlat\u0131r\u0131m. \xC7\xFCnk\xFC senin \u0131\u015F\u0131\u011F\u0131n
+    hi\xE7 s\xF6nmez."
